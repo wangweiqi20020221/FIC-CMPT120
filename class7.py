@@ -285,28 +285,3 @@ def removeDuplicatesPop(l):
             l.pop(index+1)
         index += 1
     return l
-
-
-def format(date):
-    """
-    format the date, from '23-2-2023' to "2023-2-23"
-    
-    :param date: Str().
-    :return: Str().
-    """
-    # transfer date to list
-    l = [""]
-    i = 0
-    for character in date:
-        if character == "-":
-            i += 1
-            l.append("")
-        else:
-            l[i] += character
-    date = l
-    date_return = ""
-    for i in date:
-        date_return = i + date_return
-        date_return = "-" + date_return
-    date_return = date_return[1:len(date_return)]
-    return date_return
