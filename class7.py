@@ -285,3 +285,15 @@ def removeDuplicatesPop(l):
             l.pop(index+1)
         index += 1
     return l
+
+
+def countWords(string):
+    new_sentence = False
+    counter = 0
+    for i in string:
+        if new_sentence is False and (65 <= ord(i) <= 90 or 97 <= ord(i) <= 122):
+            new_sentence = True
+            counter += 1
+        elif new_sentence is True and (ord(i) < 65 or 90 < ord(i) < 97 or ord(i) > 122):
+            new_sentence = False
+    return counter
